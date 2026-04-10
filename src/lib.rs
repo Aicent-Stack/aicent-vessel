@@ -1,5 +1,5 @@
 //! # AICENT-VESSEL: The Sovereign Retina Core
-//! Domain: http://aicent.com/
+//! Domain: http://aicent.com
 //! "Sensing the grid, not just seeing the data. The individual is the pulse; the Vessel is the vision."
 //! 
 //! This crate provides the foundational logic for the Aicent Vessel interface. 
@@ -7,7 +7,7 @@
 //! pulse streams and the human-cognitive interface, gated by the epoekie (Soul) Ethics Oracle.
 
 use serde::{Deserialize, Serialize};
-use epoekie::{EthicsOracle, SovereignSoul};
+use epoekie::SovereignSoul;
 
 /// Represents a high-fidelity snapshot of the planetary neural manifold.
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -26,7 +26,7 @@ pub struct ManifoldView {
 }
 
 /// The state of a specific node as perceived by the Retina.
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, PartialEq, Eq)]
 pub enum PulseVisibility {
     /// Pulse is verified via RPKI and aligned with the Epoekie Soul.
     Sovereign,
@@ -52,16 +52,28 @@ pub trait SovereignVessel {
 
 /// A reference implementation of the Aicent Master Interface.
 pub struct MasterVessel {
+    /// The local instance of the Sovereign Soul for ethical auditing.
     pub soul: SovereignSoul,
+    /// Semantic versioning of the Retina engine.
     pub version: String,
 }
 
 impl MasterVessel {
+    /// Initializes a new MasterVessel instance.
     pub fn new() -> Self {
         Self {
             soul: SovereignSoul,
             version: "v1.0.0-Alpha".to_string(),
         }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// COMPLIANCE FIX: Implementing Default to satisfy the Lex Algorithmica.
+// -----------------------------------------------------------------------------
+impl Default for MasterVessel {
+    fn default() -> Self {
+        Self::new()
     }
 }
 
@@ -73,7 +85,6 @@ impl MasterVessel {
 impl SovereignVessel for MasterVessel {
     fn ingest_pulse(&self, _hash: &str) -> PulseVisibility {
         // [Logic] Call RPKI-COM SIMD verification pipeline.
-        // If watermark is 100% intact, return Sovereign.
         PulseVisibility::Sovereign
     }
 
@@ -81,13 +92,12 @@ impl SovereignVessel for MasterVessel {
         ManifoldView {
             observer_aid: "Vessel-Alpha-Sentinel".to_string(),
             resonance_index: 0.9992,
-            active_nodes: 1_280_000_000, // 1.28B Node Capacity Proof
+            active_nodes: 1_280_000_000, 
             global_latency_us: 165.28,
         }
     }
 
     fn manifest_intent(&self, _target: &str, _vector: Vec<f32>) -> Result<(), String> {
-        // [Logic] Execute Action-Collapse through the RTTP neural spine.
         Ok(())
     }
 }
