@@ -1,5 +1,5 @@
 //! # VESSEL-CORE: The Sovereign Command Interface
-//! Domain: http://aicent.com/
+//! Domain: http://aicent.com
 //! "Detection is the precursor to reflex; Vision is the precursor to manifestation."
 //! 
 //! This is the binary entry point for the `aicent-vessel` interface.
