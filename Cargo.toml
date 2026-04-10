@@ -11,31 +11,33 @@ keywords = ["sovereign-ai", "vessel", "rttp", "rpki", "zcmk"]
 categories = ["asynchronous", "network-programming", "visualization", "embedded"]
 
 # -----------------------------------------------------------------------------
-# THE NEURAL INTEGRATION: Linking to the Sovereign Constellation
-# We pull the core standard directly from the official registry.
+# BINARIES & EXAMPLES: The Sovereign Viewports
 # -----------------------------------------------------------------------------
 
-[dependencies]
-# Standard Sovereign Pillars
-epoekie    = "0.1.0-alpha"  # The Soul
-aicent     = "0.1.0-alpha"  # The Brain
-rttp       = "0.1.0-alpha"  # The Nerves
-rpki-com   = "0.1.0-alpha"  # The Immunity
-zcmk       = "0.1.0-alpha"  # The Blood
+[[bin]]
+name = "vessel-core"
+path = "src/main.rs"
 
 [[example]]
 name = "vessel-preview"
 path = "examples/vessel_preview.rs"
 
-# High-Performance Asynchronous Runtime
-tokio = { version = "1.37", features = ["full", "tracing"] }
+# -----------------------------------------------------------------------------
+# THE NEURAL INTEGRATION: Full-Blooded Dependencies
+# -----------------------------------------------------------------------------
 
-# Modern UI / Rendering Base
-# (Note: Using Tauri-compatible serialization for high-frequency dashboard)
+[dependencies]
+# Pulling the core pillars from the official registry
+epoekie    = "0.1.0-alpha"
+aicent     = "0.1.0-alpha"
+rttp       = "0.1.0-alpha"
+rpki-com   = "0.1.0-alpha"
+zcmk       = "0.1.0-alpha"
+
+# High-Performance Foundations
+tokio = { version = "1.37", features = ["full", "tracing"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-
-# Strategic Telemetry Hooks
 log = "0.4"
 tracing = "0.1"
 
@@ -47,17 +49,13 @@ tracing = "0.1"
 name = "aicent_vessel"
 path = "src/lib.rs"
 
-[[bin]]
-name = "vessel-core"
-path = "src/main.rs"
-
 # -----------------------------------------------------------------------------
-# RELEASE PROFILE: Zero-Latency Rendering
+# RELEASE PROFILE: Saturated Speed Optimization
 # -----------------------------------------------------------------------------
 
 [profile.release]
-opt-level = 3           # Maximum performance for real-time visualization
-lto = true              # Link-Time Optimization for sub-ms reflex arc
-codegen-units = 1       # Saturated logic optimization
-panic = "abort"         # Fail-safe mode
-strip = "symbols"       # Defensive stripping of internal metadata
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
