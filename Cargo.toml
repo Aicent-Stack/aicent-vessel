@@ -23,6 +23,10 @@ rttp       = "0.1.0-alpha"  # The Nerves
 rpki-com   = "0.1.0-alpha"  # The Immunity
 zcmk       = "0.1.0-alpha"  # The Blood
 
+[[example]]
+name = "vessel-preview"
+path = "examples/vessel_preview.rs"
+
 # High-Performance Asynchronous Runtime
 tokio = { version = "1.37", features = ["full", "tracing"] }
 
