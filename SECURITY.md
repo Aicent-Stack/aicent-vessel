@@ -42,7 +42,7 @@ A **Visual Pathogen** is any data stream or rendering anomaly that attempts to b
 If you identify a vulnerability in the **Retina Gate** or the **Neural Spine Attachment** logic, you must trigger the **Sovereign Reporting Protocol**:
 
 1.  **Strict Confidentiality:** Do not open a public issue. Security anomalies in the Vessel are treated as private reflexes until a patch is deployed across the Hive.
-2.  **Encrypted Pulse:** Submit a high-fidelity report to **security@aicent.com**. 
+2.  **Encrypted Pulse:** Submit a high-fidelity report to **lee@aicent.com**. 
 3.  **Audit Requirements:** Your report must include:
     - A technical description of the pathogen.
     - Evidence of the bypass (e.g., a trace showing unauthorized manifold access).
