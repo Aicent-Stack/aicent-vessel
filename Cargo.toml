@@ -10,47 +10,42 @@ homepage = "http://aicent.net/vessel"
 rust-version = "1.85.0"
 
 # -----------------------------------------------------------------------------
+# BINARIES & EXAMPLES
+# -----------------------------------------------------------------------------
+[[bin]]
+name = "vessel-core"
+path = "src/main.rs"
+
+[[example]]
+name = "vessel-preview"
+path = "examples/vessel_preview.rs"
+
+# -----------------------------------------------------------------------------
 # THE NEURAL VISUALIZATION MATRIX: Dependencies
 # -----------------------------------------------------------------------------
 [dependencies]
-# --- Sovereign Pillars (Linking to Published Standards) ---
 epoekie  = "0.1.0-alpha"
 aicent   = "0.1.0-alpha"
 rttp     = "0.1.0-alpha"
 rpki-com = "0.1.0-alpha"
 
-# --- High-Performance Math & Manifold Projection ---
-# Used for mapping 256-dimensional semantic vectors to 3D space.
-nalgebra = { version = "0.32", features = ["libm"] }
+# 🛡️ FIX: Enabling 'serde-serialize' to allow 3D Manifolds to flow through the spine.
+nalgebra = { version = "0.32", features = ["libm", "serde-serialize"] }
 
-# --- Async & Concurrency (Zero-Jitter Loop) ---
 tokio = { version = "1.37", features = ["full", "tracing"] }
 futures-util = "0.3"
-
-# --- Serialization & Telemetry ---
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-bytes = "1.6"
+bytes = { version = "1.6", features = ["serde"] }
 tracing = "0.1"
 log = "0.4"
-
-# -----------------------------------------------------------------------------
-# PROJECT STRUCTURE
-# -----------------------------------------------------------------------------
-[lib]
-name = "aicent_vessel"
-path = "src/lib.rs"
-
-[[bin]]
-name = "vessel-core"
-path = "src/main.rs"
 
 # -----------------------------------------------------------------------------
 # RELEASE PROFILE: Saturated Speed Optimization
 # -----------------------------------------------------------------------------
 [profile.release]
 opt-level = 3
-lto = "fat"             # Aggressive fusion for zero-latency rendering
+lto = "fat"
 codegen-units = 1
 panic = "abort"
 strip = "symbols"
