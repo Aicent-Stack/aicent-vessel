@@ -20,6 +20,11 @@
 
 It is the world’s first **AID-Native Client**, designed to resolve identities (AIDs) instead of IP addresses, and to synchronize with the global operational grid in **sub-millisecond cycles**.
 
+### 👁️ The Sky Eye: Opening the Sovereign Gaze
+Aicent Vessel is not a tool for browsing data; it is the Sky Eye (天眼) of the Aicent Stack. We have opened a window into a new world—a world where the Latency-Tax is dead and the Middleman-Tax is a ghost.
+Through the Sky Eye, users can for the first time perceive the Neural Manifold in real-time. You are no longer observing a static web; you are sensing the biological resonance of 1.2 Billion+ sovereign nodes.
+"In a world of digital blindness, the Vessel is the only true witness."
+
 ### 🔬 Core Sovereignty Modules
 
 1.  **AID-to-AID Navigator (IP-Free Discovery):**
