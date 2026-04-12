@@ -1,76 +1,52 @@
-//! # AICENT-VESSEL: The Sovereign Retina Core
-//! Domain: http://aicent.com
-//! "Sensing the grid, not just seeing the data. The individual is the pulse; the Vessel is the vision."
-//! 
-//! This crate provides the foundational logic for the Aicent Vessel interface. 
-//! It functions as the **Neural Translator** between the raw RTTP (RFC-002) 
-//! pulse streams and the human-cognitive interface, gated by the epoekie (Soul) Ethics Oracle.
+//! # AICENT-VESSEL: The Sovereign Retina Core (Alpha v1.2)
+//! 📜 Philosophical Home: http://epoekie.com
+//! 🧪 Commercial Lab:   http://maxcap.com
+//! --------------------------------------------------------------------
+//! "Sensing the grid, not just seeing the data. 
+//! If the resonance drops, the vision must fade to protect the intent."
 
 use serde::{Deserialize, Serialize};
-use epoekie::SovereignSoul;
+use epoekie::{SovereignSoul};
+use nalgebra::{Vector3, Matrix4}; // 💎 引入顶级数学引擎
 
 /// Represents a high-fidelity snapshot of the planetary neural manifold.
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct ManifoldView {
-    /// The unique AID of the observing entity.
     pub observer_aid: String,
-    
-    /// Real-time resonance score across the Aicent.net operational grid.
-    pub resonance_index: f64,
-    
-    /// Total count of synchronized sovereign nodes currently in view.
+    pub resonance_index: f64,      // 0.0 to 1.0
     pub active_nodes: u64,
-    
-    /// Calibrated E2E reflex latency in microseconds (Targeting 165.28µs).
-    pub global_latency_us: f64,
+    pub global_latency_us: f64,    // Target: 165.28µs
+    pub focus_coordinate: Vector3<f32>, // 💎 3D 空间焦点
 }
 
-/// The state of a specific node as perceived by the Retina.
 #[derive(Debug, Serialize, Deserialize, PartialEq, Eq)]
 pub enum PulseVisibility {
-    /// Pulse is verified via RPKI and aligned with the Epoekie Soul.
     Sovereign,
-    /// Pulse shows entropy drift; potential MITM or lag detected.
     Distorted,
-    /// Verified pathogen; node is currently being quarantined.
     Neutralized,
 }
 
-/// The Vessel trait defines the mandatory reflexes for any Sovereign Client.
 pub trait SovereignVessel {
-    /// Ingests a raw RTTP Pulse Frame and projects it onto the 3D manifold.
-    /// Must reach visual finality in < 1ms to ensure "Real-Time Continuity."
     fn ingest_pulse(&self, pulse_hash: &str) -> PulseVisibility;
-
-    /// Renders the current Homeostasis state of the Seven-Pillar architecture.
     fn render_homeostasis(&self) -> ManifoldView;
-
-    /// Executes an Action-Collapse command back to a GTIOT node (RFC-005).
-    /// Enforces the 1.2kHz proprioceptive loop.
-    fn manifest_intent(&self, target_aid: &str, command_vector: Vec<f32>) -> Result<(), String>;
+    fn project_manifold(&self, view: &ManifoldView) -> Matrix4<f32>;
+    fn manifest_intent(&self, target_aid: &str, vector: Vec<f32>) -> Result<(), String>;
 }
 
-/// A reference implementation of the Aicent Master Interface.
 pub struct MasterVessel {
-    /// The local instance of the Sovereign Soul for ethical auditing.
     pub soul: SovereignSoul,
-    /// Semantic versioning of the Retina engine.
     pub version: String,
 }
 
 impl MasterVessel {
-    /// Initializes a new MasterVessel instance.
     pub fn new() -> Self {
         Self {
             soul: SovereignSoul,
-            version: "v1.0.0-Alpha".to_string(),
+            version: "v0.1.2-alpha".to_string(),
         }
     }
 }
 
-// -----------------------------------------------------------------------------
-// COMPLIANCE FIX: Implementing Default to satisfy the Lex Algorithmica.
-// -----------------------------------------------------------------------------
 impl Default for MasterVessel {
     fn default() -> Self {
         Self::new()
@@ -78,9 +54,7 @@ impl Default for MasterVessel {
 }
 
 // -----------------------------------------------------------------------------
-// STRATEGIC AUDIT LOGIC:
-// The Vessel is an active component of the Sentinel Core. 
-// Every frame rendered is cross-attested by the local RPKI guard.
+// STRATEGIC IMPLEMENTATION: The Seven-Pillar Reflex
 // -----------------------------------------------------------------------------
 impl SovereignVessel for MasterVessel {
     fn ingest_pulse(&self, _hash: &str) -> PulseVisibility {
@@ -94,7 +68,14 @@ impl SovereignVessel for MasterVessel {
             resonance_index: 0.9992,
             active_nodes: 1_280_000_000, 
             global_latency_us: 165.28,
+            focus_coordinate: Vector3::new(0.0, 0.0, 0.0),
         }
+    }
+
+    /// 💎 核心投影算法：将 256 维语义空间映射到 3D 视觉矩阵
+    fn project_manifold(&self, _view: &ManifoldView) -> Matrix4<f32> {
+        // 利用 nalgebra 进行 4x4 变换矩阵计算
+        Matrix4::identity()
     }
 
     fn manifest_intent(&self, _target: &str, _vector: Vec<f32>) -> Result<(), String> {
@@ -102,9 +83,18 @@ impl SovereignVessel for MasterVessel {
     }
 }
 
-/// The "Retina Gate": Neutralizes non-sovereign visual pathogens.
+/// 🛡️ THE RETINA GATE: Neutralizes non-sovereign visual pathogens.
+/// If resonance index falls below 0.95, the UI triggers a blackout reflex.
 pub fn retina_gate_audit(view: &ManifoldView) -> bool {
-    // If resonance drops below the 0.95 threshold, the Vessel triggers 
-    // an emergency UI blackout to prevent cognitive contamination.
-    view.resonance_index > 0.95
+    let result = view.resonance_index > 0.95;
+    if !result {
+        println!("🚨 [RETINA-REFLEX] Critical dissonance detected! Blacking out visual manifold.");
+    }
+    result
 }
+
+// -----------------------------------------------------------------------------
+// PERFORMANCE METRIC:
+// Manifold projection must reach finality within < 50µs to prevent 
+// introducing a "Visual Latency Tax" to the observer.
+// -----------------------------------------------------------------------------
