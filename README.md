@@ -1,7 +1,8 @@
 # 🛰️ aicent-vessel: The Sovereign Retina
 ## Human-AI Neural Interface & System Visualization [v1.2.1-Alpha]
 
-[![Ecosystem Vitality](https://github.com/Aicent-Stack/aicent-vessel/actions/workflows/ci.yml/badge.svg)](https://github.com/Aicent-Stack/aicent-vessel/actions)
+[![Ecosystem Vitality](https://github.com/Aicent-Stack/aicent-vessel/actions/workflows/vessel_audit.yml/badge.svg)](https://github.com/Aicent-Stack/aicent-vessel/actions)
+
 <p align="left">
   <img src="https://img.shields.io/badge/Status-Retina%20Active-ff0055.svg" alt="Status">
   <img src="https://img.shields.io/badge/Version-v1.2.1--Alpha-blue.svg" alt="Version">
