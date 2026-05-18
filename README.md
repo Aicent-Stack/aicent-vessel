@@ -26,7 +26,7 @@ The v1.2.3-Alpha release has established the standard for sovereign self-observa
 | Metric | Specification | v1.2.3-Alpha Reality |
 | :--- | :--- | :--- |
 | **Vision-Gated Reflex** | < 250 µs | ✅ **183.292 µs** (100% Audit Load) |
-| **Telemetry Refresh** | 120.0 Hz | ✅ **8.33 ms** (Real-Time Stream) |
+| **Telemetry Refresh** | **1.2 kHz** | ✅ **833.33 µs** (Atomic Pulse-Sync) |
 | **Planetary Sync Jitter**| **12 ns** | Immutable Imperial Constant |
 | **Diagnostic Overhead** | < 2.0 µs | ✅ **Zero-Copy 128-bit Suture** |
 | **Numeric Standard** | 64-bit Soft | ✅ **128-bit Hard Absolute** |
