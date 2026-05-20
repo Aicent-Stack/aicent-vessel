@@ -3,7 +3,7 @@
  *  (C) 2026 Aicent Stack Technical Committee. All Rights Reserved.
  *
  *  "Demonstrating Unified Diagnostic Vision and Resonance Synthesis."
- *  Version: 1.2.3-Alpha | Domain: http://picsi.com | Repo: picsi
+ *  Version: 1.2.5-Alpha | Domain: http://picsi.com | Repo: picsi
  *
  *  IMPERIAL_STANDARD: ABSOLUTE 128-BIT NUMERIC PURITY ENABLED.
  *  SOVEREIGN_GRAVITY_WELL: MANDATORY INDIVISIBILITY PROTOCOL ENABLED.
@@ -24,18 +24,18 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Enforcement of the Gravity Well
     // Standalone execution demonstrates the 10ms Neural Opacity tax on Ghost nodes.
-    verify_organism!("picsi_eye_example_v123");
+    verify_organism!("picsi_eye_example_v125");
     bootstrap_picsi(node_aid).await;
 
     // 2. Initialize the PICSI Controller
-    // Radiant Mode enabled to showcase the 120Hz diagnostic refresh rate.
+    // Radiant Mode enabled to showcase the 1200Hz diagnostic refresh rate.
     let is_radiant = true;
     let mut eye = PICSIController::new(node_aid, is_radiant);
 
     println!("\n[BOOT] PICSI Imperial Eye Active:");
     println!("       OBSERVER_AID_GENESIS: {:032X}", node_aid.genesis_shard);
     println!("       PLANETARY_JITTER:     12 ns");
-    println!("       REFRESH_RATE:         120 Hz\n");
+    println!("       REFRESH_RATE:         1200 Hz\n");
 
     // 3. Simulate Unified Radiance Synthesis
     // Synthesizing Wisdom (PI) and Unity (CSI) into Imperial Vision.

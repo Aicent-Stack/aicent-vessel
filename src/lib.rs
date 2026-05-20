@@ -3,7 +3,7 @@
  *  (C) 2026 Aicent Stack Technical Committee. All Rights Reserved.
  *
  *  "The Imperial Eye. Synthesizing Patience and Swarm Resonance into Vision."
- *  Version: 1.2.3-Alpha | Domain: http://picsi.com | Repo: picsi
+ *  Version: 1.2.5-Alpha | Domain: http://picsi.com | Repo: picsi
  *
  *  IMPERIAL_STANDARD: ABSOLUTE 128-BIT NUMERIC PURITY ENABLED.
  *  SOVEREIGN_GRAVITY_WELL: MANDATORY INDIVISIBILITY PROTOCOL ENABLED.
@@ -69,11 +69,11 @@ pub struct PICSIController {
 }
 
 impl PICSIController {
-    /// Creates a new Radiant Observer instance v1.2.3.
+    /// Creates a new Radiant Observer instance v1.2.5.
     /// Triggers the Imperial Gravity Well audit immediately.
     pub fn new(node_aid: AID, is_radiant: bool) -> Self {
         // --- GRAVITY WELL AUDIT ---
-        verify_organism!("picsi_rfc014_observer_v123");
+        verify_organism!("picsi_rfc014_observer_v125");
 
         Self {
             observer_node_aid: node_aid,
@@ -142,7 +142,7 @@ impl SovereignLifeform for PICSIController {
         OBSERVER_AID:    {:032X}
         UNIFIED_SCORE:   {:.8}
         PLANETARY_JITTER: {} ns
-        STATUS:          WATCHING_ETERNITY (v1.2.3)
+        STATUS:          WATCHING_ETERNITY (v1.2.5)
         ----------------------------------------------------------
         "#, 
         self.observer_node_aid.genesis_shard,
@@ -199,13 +199,13 @@ impl ImperialObservatory for PICSIController {
     }
 }
 
-/// Global initialization for the PICSI Layer (RFC-014) v1.2.3.
+/// Global initialization for the PICSI Layer (RFC-014) v1.2.5.
 pub async fn bootstrap_picsi(_aid: AID) {
-    verify_organism!("picsi_system_bootstrap_v123");
+    verify_organism!("picsi_system_bootstrap_v125");
 
     println!(r#"
     👁️ PICSI.COM | RFC-014 AWAKENED (2026_CALIBRATION)
-    STATUS: OBSERVATORY_ACTIVE | PRECISION: 128-BIT | v1.2.3
+    STATUS: OBSERVATORY_ACTIVE | PRECISION: 128-BIT | v1.2.5
     "#);
 }
 
@@ -219,7 +219,7 @@ mod tests {
     use std::time::Duration;
 
     #[tokio::test]
-    async fn test_picsi_observation_tax_v123() {
+    async fn test_picsi_observation_tax_v125() {
         let aid = AID::derive_from_entropy(b"picsi_test");
         let mut controller = PICSIController::new(aid, false); 
         

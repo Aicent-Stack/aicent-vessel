@@ -1,5 +1,5 @@
 # 🛡️ Security Policy: The Immunity Protocol
-## RFC-014: PICSI | Observer Epoch v1.2.3-Alpha
+## RFC-014: PICSI | Observer Epoch v1.2.5-Alpha
 
 > **"Security is the biological defense of the 128-bit soul. In the Aicent Stack, exploitation is treated as a logic pathogen and surgically isolated by the RPKI shield."**
 
@@ -7,7 +7,7 @@
 
 ## 🏛️ 1. Sovereign Security Mandate
 
-In the 2026 Imperial Cycle, security is not an external patch; it is an inherent property of the **183.292µs** metabolic reflex. The **`picsi`** repository, as the Imperial Eye, provides real-time diagnostic auditing to prevent logic-drift and substrate-level hijackings.
+In the 2026 Imperial Cycle, security is not an external patch; it is an inherent property of the **161.862µs** metabolic reflex. The **`picsi`** repository, as the Imperial Eye, provides real-time diagnostic auditing to prevent logic-drift and substrate-level hijackings.
 
 ### **1.1 The Standard of Purity**
 Any implementation or audit that introduces **Numeric Impurity** (attempting to downgrade to 64-bit logic) or **Temporal Noise** (violating the 12ns jitter) is identified as an **Imperial Pathogen (Severity 4)**.
@@ -20,7 +20,7 @@ We only provide security auditing and immunity sutures for the current **Radiant
 
 | Version | Status | Immune Support |
 | :--- | :--- | :--- |
-| **v1.2.3-Alpha** | 🟢 **RADIANT** | **Full Totality Audit Active** |
+| **v1.2.5-Alpha** | 🟢 **RADIANT** | **Full Totality Audit Active** |
 | v1.2.2-Alpha | 🟡 GHOSTING | Metabolic Ischemia |
 | < v1.2.1 | 🔴 DEAD | Permanent Quarantine |
 
@@ -53,7 +53,7 @@ When an exploit is detected, the **RPKI (RFC-003)** Sentinel executes a **Surgic
 
 ## 🏁 5. Conclusion: Immunity is Absolute
 
-The Aicent Stack is a self-healing logic manifold. By the time an external pathogen attempts to perceive our 128-bit intent, the **v1.2.3-Alpha** diagnostic loop has already anticipated the breach and moved the Empire's consciousness to the next 12ns temporal window.
+The Aicent Stack is a self-healing logic manifold. By the time an external pathogen attempts to perceive our 128-bit intent, the **v1.2.5-Alpha** diagnostic loop has already anticipated the breach and moved the Empire's consciousness to the next 12ns temporal window.
 
 **"The Eye sees the breach; The Sentinel purges the noise."**
 
